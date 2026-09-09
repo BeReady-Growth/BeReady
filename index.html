@@ -31,6 +31,7 @@
       --radius-sm: 10px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --footer-height: 72px;
     }
 
     body {
@@ -39,6 +40,7 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      padding-bottom: var(--footer-height);
     }
 
     a {
@@ -883,115 +885,95 @@
     }
 
     /* ============================================================
-       NEW FOOTER WITH BUTTONS
+       FLOATING FOOTER BUTTONS (bottom navigation)
        ============================================================ */
-    .site-footer {
-      background: #0d1f30;
-      color: rgba(255, 255, 255, 0.7);
-      padding: 48px 0 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .footer-grid {
-      display: grid;
-      gap: 32px;
-      grid-template-columns: 1fr;
-    }
-
-    .footer-brand .logo {
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .footer-brand p {
-      font-size: 0.9rem;
-      max-width: 320px;
-      line-height: 1.6;
-    }
-
-    /* Footer nav buttons - the star feature */
-    .footer-nav-buttons {
+    .floating-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(16, 42, 67, 0.08);
+      padding: 8px 16px;
+      height: var(--footer-height);
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
       align-items: center;
-      margin-top: 12px;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 -4px 30px rgba(16, 42, 67, 0.06);
+      transition: var(--transition);
     }
 
-    .footer-nav-btn {
+    .floating-footer .footer-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 10px 24px;
+      padding: 10px 20px;
       border-radius: 50px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: var(--transition);
-      border: 2px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.05);
-      color: rgba(255, 255, 255, 0.8);
+      border: 2px solid transparent;
+      background: transparent;
+      color: var(--text-light);
       text-decoration: none;
-      letter-spacing: 0.01em;
+      flex: 1;
+      max-width: 160px;
+      min-width: 70px;
     }
 
-    .footer-nav-btn:hover {
-      background: var(--green);
-      border-color: var(--green);
-      color: var(--white);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(25, 169, 116, 0.25);
-    }
-
-    .footer-nav-btn i {
+    .floating-footer .footer-btn i {
       font-size: 1rem;
       opacity: 0.7;
+      transition: var(--transition);
     }
 
-    .footer-nav-btn:hover i {
+    .floating-footer .footer-btn:hover {
+      background: rgba(16, 42, 67, 0.05);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .floating-footer .footer-btn:hover i {
       opacity: 1;
     }
 
-    /* Special BeReady button with gold accent */
-    .footer-nav-btn.beready {
+    .floating-footer .footer-btn.beready {
       background: var(--gold);
       border-color: var(--gold);
       color: var(--navy);
+      font-weight: 700;
     }
 
-    .footer-nav-btn.beready:hover {
+    .floating-footer .footer-btn.beready i {
+      opacity: 1;
+      color: var(--navy);
+    }
+
+    .floating-footer .footer-btn.beready:hover {
       background: #e0a832;
       border-color: #e0a832;
       box-shadow: 0 8px 25px rgba(244, 185, 66, 0.3);
       transform: translateY(-3px);
     }
 
-    .footer-nav-btn.beready i {
+    .floating-footer .footer-btn.active {
+      color: var(--green);
+      background: rgba(25, 169, 116, 0.08);
+    }
+
+    .floating-footer .footer-btn.active i {
       opacity: 1;
-      color: var(--navy);
+      color: var(--green);
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: 32px;
-      padding-top: 24px;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    .footer-links h5 {
-      color: var(--white);
-      font-weight: 600;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-    .footer-links a {
-      display: block;
-      padding: 4px 0;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-    .footer-links a:hover {
-      color: var(--white);
-      padding-left: 4px;
+    /* Hide footer buttons when app is active */
+    .show-app .floating-footer {
+      display: none;
     }
 
     /* ============================================================
@@ -1559,9 +1541,6 @@
       .pricing-grid {
         grid-template-columns: repeat(3, 1fr);
       }
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-      }
       .app-score-section {
         grid-template-columns: 1fr 1fr;
       }
@@ -1573,6 +1552,12 @@
       }
       .records-panel .record-form .btn {
         grid-column: span 1;
+      }
+      .floating-footer .footer-btn {
+        padding: 10px 28px;
+        font-size: 0.9rem;
+        flex: 0 1 auto;
+        min-width: 100px;
       }
     }
 
@@ -1656,12 +1641,35 @@
       .ring .center {
         font-size: 2rem;
       }
-      .footer-nav-buttons {
-        justify-content: center;
+      .floating-footer {
+        padding: 6px 10px;
+        gap: 4px;
       }
-      .footer-nav-btn {
-        padding: 8px 18px;
-        font-size: 0.8rem;
+      .floating-footer .footer-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        min-width: 50px;
+        flex: 1;
+      }
+      .floating-footer .footer-btn i {
+        font-size: 0.85rem;
+      }
+      .floating-footer .footer-btn .btn-label {
+        display: none;
+      }
+      .floating-footer .footer-btn.beready .btn-label {
+        display: inline;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .floating-footer .footer-btn {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+        min-width: 40px;
+      }
+      .floating-footer .footer-btn i {
+        font-size: 0.75rem;
       }
     }
 
@@ -1676,6 +1684,14 @@
     .show-app .mobile-nav,
     .show-app .site-footer,
     .show-app .public-section {
+      display: none !important;
+    }
+
+    /* Keep footer visible on public site */
+    .floating-footer {
+      display: flex !important;
+    }
+    .show-app .floating-footer {
       display: none !important;
     }
   </style>
@@ -1917,38 +1933,33 @@
     </section>
 
     <!-- ============================================================
-    NEW FOOTER WITH BUTTONS
+    FLOATING FOOTER BUTTONS (bottom navigation)
     ============================================================ -->
-    <footer class="site-footer">
+    <div class="floating-footer" id="floatingFooter">
+      <button class="footer-btn active" id="footerHome">
+        <i class="fas fa-home"></i>
+        <span class="btn-label">Home</span>
+      </button>
+      <button class="footer-btn" id="footerAbout">
+        <i class="fas fa-info-circle"></i>
+        <span class="btn-label">About</span>
+      </button>
+      <button class="footer-btn" id="footerServices">
+        <i class="fas fa-concierge-bell"></i>
+        <span class="btn-label">Services</span>
+      </button>
+      <button class="footer-btn beready" id="footerBeReady">
+        <i class="fas fa-bolt"></i>
+        <span class="btn-label">BeReady</span>
+      </button>
+    </div>
+
+    <!-- OLD FOOTER (replaced by floating) - keeping minimal for legal -->
+    <footer class="site-footer" style="padding:20px 0 10px;background:#0d1f30;color:rgba(255,255,255,0.5);border-top:1px solid rgba(255,255,255,0.04);">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="#" class="logo"><span class="logo-icon" style="background:var(--gold);color:var(--navy);">B</span> Be<span style="color:var(--gold);">Ready</span></a>
-            <p>Helping African small businesses formalise, organise and build the credibility they need to pursue bigger opportunities.</p>
-            <p style="font-size:0.85rem;margin-top:8px;color:rgba(255,255,255,0.4);">BeReady Growth Partners</p>
-          </div>
-
-          <!-- FOOTER NAV BUTTONS -->
-          <div class="footer-links">
-            <h5>Quick Navigation</h5>
-            <div class="footer-nav-buttons">
-              <a href="#" class="footer-nav-btn" id="footerHome"><i class="fas fa-home"></i> Home</a>
-              <a href="#about" class="footer-nav-btn" id="footerAbout"><i class="fas fa-info-circle"></i> About</a>
-              <a href="#features" class="footer-nav-btn" id="footerServices"><i class="fas fa-concierge-bell"></i> Services</a>
-              <a href="#" class="footer-nav-btn beready" id="footerBeReady"><i class="fas fa-bolt"></i> BeReady</a>
-            </div>
-          </div>
-
-          <div class="footer-links">
-            <h5>Connect</h5>
-            <a href="#"><i class="fab fa-twitter" style="margin-right:8px;"></i>Twitter</a>
-            <a href="#"><i class="fab fa-linkedin" style="margin-right:8px;"></i>LinkedIn</a>
-            <a href="#"><i class="fab fa-youtube" style="margin-right:8px;"></i>YouTube</a>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          &copy; 2026 BeReady Growth Partners. All rights reserved. Built for African businesses.
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;">
+          <span style="font-size:0.85rem;">&copy; 2026 BeReady Growth Partners. All rights reserved.</span>
+          <span style="font-size:0.8rem;color:rgba(255,255,255,0.3);">Built for African businesses</span>
         </div>
       </div>
     </footer>
@@ -2211,12 +2222,14 @@
       const appSidebar = document.getElementById('appSidebar');
       const backToSiteBtn = document.getElementById('backToSiteBtn');
       const appAvatar = document.getElementById('appAvatar');
+      const floatingFooter = document.getElementById('floatingFooter');
 
       // ----- Helpers -----
       function showApp() {
         publicSite.style.display = 'none';
         app.classList.add('active');
         document.body.style.overflow = 'auto';
+        document.body.style.paddingBottom = '0';
         closeMobileNav();
         closeAppSidebar();
         updateDashboardScore();
@@ -2226,6 +2239,7 @@
       function showPublic() {
         publicSite.style.display = 'block';
         app.classList.remove('active');
+        document.body.style.paddingBottom = 'var(--footer-height)';
         closeMobileNav();
         closeAppSidebar();
       }
@@ -2580,33 +2594,74 @@
       // ----- RENDER OPPORTUNITIES (static) -----
       function renderOpportunities() {}
 
-      // ----- FOOTER BUTTONS -----
+      // ----- FLOATING FOOTER BUTTONS -----
+      const footerBtns = floatingFooter.querySelectorAll('.footer-btn');
+
+      function setActiveFooter(activeId) {
+        footerBtns.forEach(btn => btn.classList.remove('active'));
+        const target = document.getElementById(activeId);
+        if (target) target.classList.add('active');
+      }
+
       document.getElementById('footerHome').addEventListener('click', function(e) {
         e.preventDefault();
+        setActiveFooter('footerHome');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
       document.getElementById('footerBeReady').addEventListener('click', function(e) {
         e.preventDefault();
+        setActiveFooter('footerBeReady');
         goToApp();
       });
 
       document.getElementById('footerAbout').addEventListener('click', function(e) {
         e.preventDefault();
-        // Scroll to about section (or just show a message)
+        setActiveFooter('footerAbout');
+        // Scroll to about section or footer
         const aboutSection = document.getElementById('about');
         if (aboutSection) {
           aboutSection.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // If no about section, scroll to footer
           document.querySelector('.site-footer').scrollIntoView({ behavior: 'smooth' });
         }
       });
 
       document.getElementById('footerServices').addEventListener('click', function(e) {
         e.preventDefault();
+        setActiveFooter('footerServices');
         const features = document.getElementById('features');
         if (features) features.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Update active footer on scroll
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+          const scrollPos = window.scrollY + 100;
+          const sections = [
+            { id: 'footerHome', el: document.getElementById('hero'), offset: 0 },
+            { id: 'footerAbout', el: document.getElementById('about') || document.querySelector('.site-footer'),
+            offset: -200 },
+            { id: 'footerServices', el: document.getElementById('features'), offset: -100 }
+          ];
+          let found = false;
+          for (let s of sections) {
+            if (s.el) {
+              const top = s.el.offsetTop + (s.offset || 0);
+              const bottom = top + s.el.offsetHeight;
+              if (scrollPos >= top && scrollPos < bottom) {
+                setActiveFooter(s.id);
+                found = true;
+                break;
+              }
+            }
+          }
+          if (!found && scrollPos < 200) {
+            setActiveFooter('footerHome');
+          }
+        }, 150);
       });
 
       // ----- INIT -----
@@ -2651,6 +2706,7 @@
         document.getElementById('logoHome').addEventListener('click', function(e) {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          setActiveFooter('footerHome');
         });
         console.log('🚀 BeReady fully functional. Formalise. Build. Grow.');
       }
