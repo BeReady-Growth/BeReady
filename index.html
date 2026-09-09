@@ -882,18 +882,22 @@
       line-height: 1.7;
     }
 
-    /* ----- FOOTER ----- */
+    /* ============================================================
+       NEW FOOTER WITH BUTTONS
+       ============================================================ */
     .site-footer {
       background: #0d1f30;
       color: rgba(255, 255, 255, 0.7);
       padding: 48px 0 32px;
       border-top: 1px solid rgba(255, 255, 255, 0.04);
     }
+
     .footer-grid {
       display: grid;
       gap: 32px;
       grid-template-columns: 1fr;
     }
+
     .footer-brand .logo {
       color: var(--white);
       margin-bottom: 8px;
@@ -903,6 +907,76 @@
       max-width: 320px;
       line-height: 1.6;
     }
+
+    /* Footer nav buttons - the star feature */
+    .footer-nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .footer-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .footer-nav-btn:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(25, 169, 116, 0.25);
+    }
+
+    .footer-nav-btn i {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    .footer-nav-btn:hover i {
+      opacity: 1;
+    }
+
+    /* Special BeReady button with gold accent */
+    .footer-nav-btn.beready {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    .footer-nav-btn.beready:hover {
+      background: #e0a832;
+      border-color: #e0a832;
+      box-shadow: 0 8px 25px rgba(244, 185, 66, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .footer-nav-btn.beready i {
+      opacity: 1;
+      color: var(--navy);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 32px;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
     .footer-links h5 {
       color: var(--white);
       font-weight: 600;
@@ -918,13 +992,6 @@
     .footer-links a:hover {
       color: var(--white);
       padding-left: 4px;
-    }
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: 32px;
-      padding-top: 24px;
-      text-align: center;
-      font-size: 0.85rem;
     }
 
     /* ============================================================
@@ -1589,6 +1656,13 @@
       .ring .center {
         font-size: 2rem;
       }
+      .footer-nav-buttons {
+        justify-content: center;
+      }
+      .footer-nav-btn {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+      }
     }
 
     /* Hide public sections when app is active */
@@ -1842,7 +1916,9 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ============================================================
+    NEW FOOTER WITH BUTTONS
+    ============================================================ -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
@@ -1851,11 +1927,29 @@
             <p>Helping African small businesses formalise, organise and build the credibility they need to pursue bigger opportunities.</p>
             <p style="font-size:0.85rem;margin-top:8px;color:rgba(255,255,255,0.4);">BeReady Growth Partners</p>
           </div>
-          <div class="footer-links"><h5>Product</h5><a href="#how-it-works">How It Works</a><a href="#features">Features</a><a href="#pricing">Pricing</a></div>
-          <div class="footer-links"><h5>Company</h5><a href="#about">About</a><a href="#resources">Resources</a><a href="#contact">Contact</a></div>
-          <div class="footer-links"><h5>Connect</h5><a href="#"><i class="fab fa-twitter" style="margin-right:8px;"></i>Twitter</a><a href="#"><i class="fab fa-linkedin" style="margin-right:8px;"></i>LinkedIn</a></div>
+
+          <!-- FOOTER NAV BUTTONS -->
+          <div class="footer-links">
+            <h5>Quick Navigation</h5>
+            <div class="footer-nav-buttons">
+              <a href="#" class="footer-nav-btn" id="footerHome"><i class="fas fa-home"></i> Home</a>
+              <a href="#about" class="footer-nav-btn" id="footerAbout"><i class="fas fa-info-circle"></i> About</a>
+              <a href="#features" class="footer-nav-btn" id="footerServices"><i class="fas fa-concierge-bell"></i> Services</a>
+              <a href="#" class="footer-nav-btn beready" id="footerBeReady"><i class="fas fa-bolt"></i> BeReady</a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h5>Connect</h5>
+            <a href="#"><i class="fab fa-twitter" style="margin-right:8px;"></i>Twitter</a>
+            <a href="#"><i class="fab fa-linkedin" style="margin-right:8px;"></i>LinkedIn</a>
+            <a href="#"><i class="fab fa-youtube" style="margin-right:8px;"></i>YouTube</a>
+          </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 BeReady Growth Partners. All rights reserved. Built for African businesses.</div>
+
+        <div class="footer-bottom">
+          &copy; 2026 BeReady Growth Partners. All rights reserved. Built for African businesses.
+        </div>
       </div>
     </footer>
   </div>
@@ -1923,7 +2017,7 @@
             </div>
           </div>
 
-          <!-- MY BUSINESS (functional profile) -->
+          <!-- MY BUSINESS -->
           <div class="app-panel" id="panel-mybusiness">
             <div class="profile-form">
               <h3 style="text-align:center;margin-bottom:20px;color:var(--navy);">🏢 My Business Profile</h3>
@@ -1965,7 +2059,7 @@
             </div>
           </div>
 
-          <!-- RECORDS (functional CRUD) -->
+          <!-- RECORDS -->
           <div class="app-panel" id="panel-records">
             <div class="records-panel">
               <h3 style="margin-bottom:16px;color:var(--navy);">📊 Financial Records</h3>
@@ -2008,7 +2102,7 @@
             </div>
           </div>
 
-          <!-- COMPLIANCE (functional toggle) -->
+          <!-- COMPLIANCE -->
           <div class="app-panel" id="panel-compliance">
             <div class="records-panel">
               <h3 style="margin-bottom:16px;color:var(--navy);">✅ Compliance Checklist</h3>
@@ -2029,7 +2123,7 @@
             </div>
           </div>
 
-          <!-- READINESS SCORE (app) -->
+          <!-- READINESS SCORE -->
           <div class="app-panel" id="panel-readiness">
             <div class="panel-placeholder">
               <span class="icon">📈</span>
@@ -2047,7 +2141,7 @@
             </div>
           </div>
 
-          <!-- OPPORTUNITIES (app) -->
+          <!-- OPPORTUNITIES -->
           <div class="app-panel" id="panel-opportunities">
             <div class="records-panel">
               <h3 style="margin-bottom:16px;color:var(--navy);">🚀 Opportunities for Your Business</h3>
@@ -2248,7 +2342,6 @@
         const score = getScore();
         document.getElementById('dashBigScore').textContent = score;
         document.getElementById('dashboardScoreDisplay').textContent = score;
-        // update next steps based on records
         const records = getRecords();
         const hasRecords = records.length >= 2;
         const container = document.getElementById('nextStepsContainer');
@@ -2271,7 +2364,6 @@
         let score = 50;
         if (total > 0) score += Math.min(total * 2, 20);
         if (income > 0 && expense > 0) score += 10;
-        // compliance bonus
         const comps = getCompliance();
         const done = comps.filter(c => c.done).length;
         score += Math.min(done * 3, 10);
@@ -2313,7 +2405,6 @@
         });
         tbody.innerHTML = html;
         updateTotals(records);
-        // delete handlers
         document.querySelectorAll('.delete-btn').forEach(function(btn) {
           btn.addEventListener('click', function() {
             const idx = parseInt(this.getAttribute('data-idx'));
@@ -2330,7 +2421,6 @@
         records.forEach(r => { if (r.type === 'Income') inc += r.amount; else exp += r.amount; });
         const el = document.getElementById('recordTotal');
         if (el) el.textContent = `Total Income: K${inc.toFixed(2)} | Total Expenses: K${exp.toFixed(2)} | Net: K${(inc - exp).toFixed(2)}`;
-        // also update report
         const ri = document.getElementById('reportIncome');
         const re = document.getElementById('reportExpense');
         const rp = document.getElementById('reportProfit');
@@ -2366,7 +2456,6 @@
           const data = JSON.parse(localStorage.getItem('beReadyCompliance'));
           if (data && Array.isArray(data)) return data;
         } catch (e) {}
-        // default
         return [
           { id: 1, title: 'Business Registration', desc: 'Ensure your business is registered with PACRA', done: false },
           { id: 2, title: 'Tax Registration', desc: 'Register for VAT / TPIN with ZRA', done: false },
@@ -2398,7 +2487,6 @@
           `;
           container.appendChild(div);
         });
-        // toggle handlers
         document.querySelectorAll('.toggle-comp').forEach(function(btn) {
           btn.addEventListener('click', function() {
             const id = parseInt(this.getAttribute('data-id'));
@@ -2489,10 +2577,37 @@
         document.getElementById('reportOutput').style.display = 'block';
       });
 
-      // ----- RENDER OPPORTUNITIES (static, but shows dynamic badge) -----
-      function renderOpportunities() {
-        // already static
-      }
+      // ----- RENDER OPPORTUNITIES (static) -----
+      function renderOpportunities() {}
+
+      // ----- FOOTER BUTTONS -----
+      document.getElementById('footerHome').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      document.getElementById('footerBeReady').addEventListener('click', function(e) {
+        e.preventDefault();
+        goToApp();
+      });
+
+      document.getElementById('footerAbout').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Scroll to about section (or just show a message)
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // If no about section, scroll to footer
+          document.querySelector('.site-footer').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+
+      document.getElementById('footerServices').addEventListener('click', function(e) {
+        e.preventDefault();
+        const features = document.getElementById('features');
+        if (features) features.scrollIntoView({ behavior: 'smooth' });
+      });
 
       // ----- INIT -----
       function init() {
@@ -2508,16 +2623,13 @@
           const offset = circumference - (score / 100) * circumference;
           ring.style.strokeDasharray = offset + ' ' + circumference;
         }
-        // Check URL hash for app
         if (window.location.hash === '#app') {
           showApp();
         }
-        // Close mobile nav on escape
         document.addEventListener('keydown', function(e) {
           if (e.key === 'Escape') { closeMobileNav();
             closeAppSidebar(); }
         });
-        // Click outside mobile nav
         document.addEventListener('click', function(e) {
           if (mobileNav.classList.contains('open')) {
             if (!e.target.closest('.site-header') && !e.target.closest('.mobile-nav')) closeMobileNav();
@@ -2526,7 +2638,6 @@
             if (!e.target.closest('.app-sidebar') && !e.target.closest('.app-hamburger')) closeAppSidebar();
           }
         });
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
           anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -2537,12 +2648,10 @@
               target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
           });
         });
-        // Logo home
         document.getElementById('logoHome').addEventListener('click', function(e) {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
         console.log('🚀 BeReady fully functional. Formalise. Build. Grow.');
       }
 
@@ -2550,4 +2659,4 @@
     })();
   </script>
 </body>
-    </html>
+  </html>
