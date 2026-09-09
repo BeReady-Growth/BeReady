@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
     <title>BeReady — Formalise. Build. Grow.</title>
-    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ----- RESET & VARIABLES ----- */
         * {
             margin: 0;
             padding: 0;
@@ -32,12 +30,6 @@
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --footer-height: 72px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -71,7 +63,6 @@
             padding: 0 20px;
         }
 
-        /* ----- BUTTONS ----- */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -121,26 +112,7 @@
             padding: 10px 24px;
             font-size: 0.85rem;
         }
-        .btn-outline-light {
-            background: transparent;
-            color: var(--white);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-        .btn-outline-light:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--white);
-        }
-        .btn-danger {
-            background: #e74c3c;
-            color: white;
-            border-color: #e74c3c;
-        }
-        .btn-danger:hover {
-            background: #c0392b;
-            border-color: #c0392b;
-        }
 
-        /* ----- HEADER (public) ----- */
         .site-header {
             position: fixed;
             top: 0;
@@ -282,7 +254,6 @@
             justify-content: center;
         }
 
-        /* ----- PAGE SECTIONS (shared) ----- */
         .page-section {
             display: none;
             padding: 80px 0;
@@ -336,21 +307,11 @@
         .mt-16 {
             margin-top: 16px;
         }
-        .mt-8 {
-            margin-top: 8px;
-        }
-        .gap-8 {
-            gap: 8px;
-        }
 
-        /* ============================================================
-           HOME PAGE (original)
-           ============================================================ */
         #home-section {
             padding-top: 70px;
         }
 
-        /* ----- HERO ----- */
         #hero {
             padding: 80px 0 60px;
             background: linear-gradient(170deg, var(--bg) 0%, #eef2f7 100%);
@@ -496,7 +457,6 @@
             justify-content: center;
         }
 
-        /* ----- PROBLEM / CARDS ----- */
         #problem {
             background: var(--white);
         }
@@ -551,7 +511,6 @@
             font-size: 1rem;
         }
 
-        /* ----- HOW IT WORKS ----- */
         #how-it-works {
             background: var(--bg);
         }
@@ -603,7 +562,6 @@
             margin-top: 2px;
         }
 
-        /* ----- READINESS SCORE (public) ----- */
         #readiness {
             background: var(--white);
         }
@@ -694,7 +652,6 @@
             border-left-color: var(--gold);
         }
 
-        /* ----- FEATURES ----- */
         #features {
             background: var(--bg);
         }
@@ -734,7 +691,6 @@
             margin-top: 4px;
         }
 
-        /* ----- OPPORTUNITIES (public) ----- */
         #opportunities {
             background: var(--navy);
             color: var(--white);
@@ -779,7 +735,6 @@
             margin-top: 4px;
         }
 
-        /* ----- WHO IT'S FOR ----- */
         #who {
             background: var(--white);
         }
@@ -816,7 +771,6 @@
             margin-top: 2px;
         }
 
-        /* ----- PRICING ----- */
         #pricing {
             background: var(--bg);
         }
@@ -909,7 +863,6 @@
             opacity: 0.7;
         }
 
-        /* ----- FINAL CTA ----- */
         #final-cta {
             background: var(--navy);
             color: var(--white);
@@ -929,17 +882,10 @@
             line-height: 1.7;
         }
 
-        /* ============================================================
-           ABOUT PAGE (hidden by default, shown via JS)
-           ============================================================ */
+        /* ABOUT PAGE */
         #about-section {
             padding-top: 70px;
-            display: none;
         }
-        #about-section.active {
-            display: block;
-        }
-
         .about-hero {
             padding: 80px 0 50px;
             background: linear-gradient(170deg, var(--navy) 0%, #0d1f30 100%);
@@ -1298,9 +1244,7 @@
             margin-top: 8px;
         }
 
-        /* ============================================================
-           FLOATING FOOTER BUTTONS (bottom navigation)
-           ============================================================ */
+        /* FLOATING FOOTER */
         .floating-footer {
             position: fixed;
             bottom: 0;
@@ -1389,9 +1333,7 @@
             display: none;
         }
 
-        /* ============================================================
-           APP DASHBOARD
-           ============================================================ */
+        /* APP DASHBOARD */
         #app {
             display: none;
             background: var(--bg);
@@ -1699,7 +1641,6 @@
             margin: 4px auto 0;
         }
 
-        /* ----- DYNAMIC BUSINESS PROFILE (My Business panel) ----- */
         .profile-form {
             background: var(--white);
             border-radius: var(--radius);
@@ -1721,8 +1662,7 @@
             margin-bottom: 4px;
         }
         .profile-form input,
-        .profile-form select,
-        .profile-form textarea {
+        .profile-form select {
             width: 100%;
             padding: 12px 14px;
             border: 1px solid #d0d5dd;
@@ -1732,8 +1672,7 @@
             transition: var(--transition);
         }
         .profile-form input:focus,
-        .profile-form select:focus,
-        .profile-form textarea:focus {
+        .profile-form select:focus {
             border-color: var(--green);
             box-shadow: 0 0 0 3px rgba(25, 169, 116, 0.15);
         }
@@ -1763,7 +1702,6 @@
             font-weight: 600;
         }
 
-        /* ----- RECORDS TABLE (functional) ----- */
         .records-panel {
             background: var(--white);
             border-radius: var(--radius);
@@ -1921,9 +1859,28 @@
             background: var(--bg);
         }
 
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
+        .site-footer {
+            background: #0d1f30;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 20px 0 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 0;
+        }
+        .site-footer .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+        .site-footer .footer-inner span {
+            font-size: 0.85rem;
+        }
+        .site-footer .footer-inner .small {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
         @media (min-width: 640px) {
             .section-title {
                 font-size: 2.8rem;
@@ -2095,62 +2052,19 @@
             }
         }
 
-        @media (max-width: 380px) {
-            .floating-footer .footer-btn {
-                padding: 6px 8px;
-                font-size: 0.7rem;
-                min-width: 40px;
-            }
-            .floating-footer .footer-btn i {
-                font-size: 0.75rem;
-            }
-            .about-hero .meta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Hide public sections when app is active */
-        .hide-public {
-            display: none !important;
-        }
         .show-app #app {
             display: block !important;
         }
         .show-app .site-header,
         .show-app .mobile-nav,
         .show-app .floating-footer,
-        .show-app .page-section {
+        .show-app .page-section,
+        .show-app .site-footer {
             display: none !important;
-        }
-
-        /* Footer */
-        .site-footer {
-            background: #0d1f30;
-            color: rgba(255, 255, 255, 0.5);
-            padding: 20px 0 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 0;
-        }
-        .site-footer .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-        }
-        .site-footer .footer-inner span {
-            font-size: 0.85rem;
-        }
-        .site-footer .footer-inner .small {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
-    <!-- ============================================================
-    PUBLIC WEBSITE
-    ============================================================ -->
     <div id="public-site">
 
         <!-- HEADER -->
@@ -2175,7 +2089,6 @@
                     </button>
                 </div>
             </div>
-            <!-- Mobile nav -->
             <div class="mobile-nav" id="mobileNav">
                 <a class="active" data-page="home">Home</a>
                 <a data-page="about">About</a>
@@ -2187,12 +2100,9 @@
             </div>
         </header>
 
-        <!-- ============================================================
-        HOME PAGE SECTION
-        ============================================================ -->
+        <!-- HOME SECTION -->
         <div class="page-section active" id="home-section">
 
-            <!-- HERO -->
             <section id="hero">
                 <div class="container hero-grid">
                     <div class="hero-content">
@@ -2227,7 +2137,6 @@
                 </div>
             </section>
 
-            <!-- PROBLEM -->
             <section id="problem">
                 <div class="container">
                     <div class="text-center">
@@ -2248,7 +2157,6 @@
                 </div>
             </section>
 
-            <!-- HOW IT WORKS -->
             <section id="how-it-works">
                 <div class="container text-center">
                     <span class="section-label">How It Works</span>
@@ -2265,7 +2173,6 @@
                 </div>
             </section>
 
-            <!-- READINESS SCORE -->
             <section id="readiness">
                 <div class="container">
                     <div class="text-center">
@@ -2298,7 +2205,6 @@
                 </div>
             </section>
 
-            <!-- FEATURES -->
             <section id="features">
                 <div class="container text-center">
                     <span class="section-label">Features</span>
@@ -2314,7 +2220,6 @@
                 </div>
             </section>
 
-            <!-- OPPORTUNITIES (public) -->
             <section id="opportunities">
                 <div class="container text-center">
                     <span class="section-label" style="background:rgba(255,255,255,0.12);color:var(--gold);">Opportunities</span>
@@ -2330,7 +2235,6 @@
                 </div>
             </section>
 
-            <!-- WHO -->
             <section id="who">
                 <div class="container text-center">
                     <span class="section-label">Who It's For</span>
@@ -2345,7 +2249,6 @@
                 </div>
             </section>
 
-            <!-- PRICING -->
             <section id="pricing">
                 <div class="container text-center">
                     <span class="section-label">Pricing</span>
@@ -2377,7 +2280,6 @@
                 </div>
             </section>
 
-            <!-- FINAL CTA -->
             <section id="final-cta">
                 <div class="container">
                     <h2>Ready to build a <span style="color:var(--gold);">stronger business</span>?</h2>
@@ -2387,14 +2289,10 @@
             </section>
 
         </div>
-        <!-- END home-section -->
 
-        <!-- ============================================================
-        ABOUT PAGE SECTION (hidden by default)
-        ============================================================ -->
+        <!-- ABOUT SECTION -->
         <div class="page-section" id="about-section">
 
-            <!-- About Hero -->
             <div class="about-hero">
                 <div class="container about-hero-content">
                     <span class="tagline">BeReady Growth Partners</span>
@@ -2409,7 +2307,6 @@
                 </div>
             </div>
 
-            <!-- Executive Summary -->
             <div class="about-section">
                 <div class="container">
                     <div class="text-center">
@@ -2432,7 +2329,6 @@
                 </div>
             </div>
 
-            <!-- Problem & Opportunity -->
             <div class="about-section" style="background:var(--bg);">
                 <div class="container">
                     <div class="text-center">
@@ -2461,7 +2357,6 @@
                 </div>
             </div>
 
-            <!-- Our Solution -->
             <div class="about-section">
                 <div class="container">
                     <div class="text-center">
@@ -2480,7 +2375,6 @@
                 </div>
             </div>
 
-            <!-- Target Customers -->
             <div class="about-section" style="background:var(--bg);">
                 <div class="container">
                     <div class="text-center">
@@ -2506,7 +2400,6 @@
                 </div>
             </div>
 
-            <!-- Products & Services -->
             <div class="about-section">
                 <div class="container">
                     <div class="text-center">
@@ -2573,7 +2466,6 @@
                 </div>
             </div>
 
-            <!-- Revenue Model -->
             <div class="about-section" style="background:var(--bg);">
                 <div class="container">
                     <div class="text-center">
@@ -2601,7 +2493,6 @@
                 </div>
             </div>
 
-            <!-- Competitive Advantage -->
             <div class="about-section">
                 <div class="container">
                     <div class="text-center">
@@ -2643,7 +2534,6 @@
                 </div>
             </div>
 
-            <!-- Vision & Mission -->
             <div class="about-section" style="background:var(--bg);">
                 <div class="container">
                     <div class="vision-mission-grid">
@@ -2661,7 +2551,6 @@
                 </div>
             </div>
 
-            <!-- Growth Strategy -->
             <div class="about-section">
                 <div class="container">
                     <div class="text-center">
@@ -2693,7 +2582,6 @@
                 </div>
             </div>
 
-            <!-- Key Metrics -->
             <div class="about-section" style="background:var(--bg);">
                 <div class="container">
                     <div class="text-center">
@@ -2729,7 +2617,6 @@
                 </div>
             </div>
 
-            <!-- Brand Positioning -->
             <div class="brand-tagline">
                 <div class="container">
                     <h2>BeReady <span class="gold">Growth Partners</span></h2>
@@ -2738,7 +2625,6 @@
                 </div>
             </div>
 
-            <!-- Conclusion -->
             <div class="about-section">
                 <div class="container">
                     <div class="text-center">
@@ -2754,9 +2640,7 @@
             </div>
 
         </div>
-        <!-- END about-section -->
 
-        <!-- Footer -->
         <footer class="site-footer">
             <div class="container">
                 <div class="footer-inner">
@@ -2767,11 +2651,8 @@
         </footer>
 
     </div>
-    <!-- END public-site -->
 
-    <!-- ============================================================
-    FLOATING FOOTER BUTTONS
-    ============================================================ -->
+    <!-- FLOATING FOOTER -->
     <div class="floating-footer" id="floatingFooter">
         <button class="footer-btn active" id="footerHome"><i class="fas fa-home"></i><span class="btn-label">Home</span></button>
         <button class="footer-btn" id="footerAbout"><i class="fas fa-info-circle"></i><span class="btn-label">About</span></button>
@@ -2779,9 +2660,7 @@
         <button class="footer-btn beready" id="footerBeReady"><i class="fas fa-bolt"></i><span class="btn-label">BeReady</span></button>
     </div>
 
-    <!-- ============================================================
-    APP DASHBOARD
-    ============================================================ -->
+    <!-- APP DASHBOARD -->
     <div id="app">
         <div class="app-container">
             <header class="app-header">
@@ -2916,14 +2795,10 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // ----- DOM refs -----
             const publicSite = document.getElementById('public-site');
             const app = document.getElementById('app');
             const siteHeader = document.getElementById('siteHeader');
@@ -2935,28 +2810,22 @@
             const appAvatar = document.getElementById('appAvatar');
             const floatingFooter = document.getElementById('floatingFooter');
 
-            // Page sections
             const homeSection = document.getElementById('home-section');
             const aboutSection = document.getElementById('about-section');
             const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
 
-            // ----- Page navigation -----
             function showPage(page) {
-                // Hide all sections
                 homeSection.classList.remove('active');
                 aboutSection.classList.remove('active');
 
-                // Show target
                 if (page === 'home') {
                     homeSection.classList.add('active');
-                    // Scroll to top
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else if (page === 'about') {
                     aboutSection.classList.add('active');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
 
-                // Update nav links
                 navLinks.forEach(function(link) {
                     link.classList.remove('active');
                     if (link.getAttribute('data-page') === page) {
@@ -2964,7 +2833,6 @@
                     }
                 });
 
-                // Update footer buttons
                 const footerBtns = floatingFooter.querySelectorAll('.footer-btn');
                 footerBtns.forEach(function(btn) {
                     btn.classList.remove('active');
@@ -2975,7 +2843,6 @@
                 closeMobileNav();
             }
 
-            // Nav click handlers
             navLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     const page = this.getAttribute('data-page');
@@ -2986,28 +2853,19 @@
                 });
             });
 
-            // Footer button handlers
-            document.getElementById('footerHome').addEventListener('click', function() {
-                showPage('home');
-            });
-
-            document.getElementById('footerAbout').addEventListener('click', function() {
-                showPage('about');
-            });
-
+            document.getElementById('footerHome').addEventListener('click', function() { showPage('home'); });
+            document.getElementById('footerAbout').addEventListener('click', function() { showPage('about'); });
             document.getElementById('footerServices').addEventListener('click', function() {
                 showPage('home');
                 setTimeout(function() {
                     document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
                 }, 300);
             });
-
             document.getElementById('footerBeReady').addEventListener('click', function(e) {
                 e.preventDefault();
                 goToApp();
             });
 
-            // ----- App functions -----
             function showApp() {
                 publicSite.style.display = 'none';
                 app.classList.add('active');
@@ -3025,7 +2883,6 @@
                 document.body.style.paddingBottom = 'var(--footer-height)';
                 closeMobileNav();
                 closeAppSidebar();
-                // Show home by default
                 showPage('home');
             }
 
@@ -3047,19 +2904,16 @@
                 appSidebar.classList.toggle('open');
             }
 
-            // ----- Public nav -----
             hamburger.addEventListener('click', toggleMobileNav);
             document.querySelectorAll('#mobileNav a').forEach(function(link) {
                 link.addEventListener('click', closeMobileNav);
             });
 
-            // Scroll shadow
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 20) siteHeader.classList.add('scrolled');
                 else siteHeader.classList.remove('scrolled');
             });
 
-            // ----- Go to App -----
             function goToApp() { showApp(); }
 
             const appTriggers = [
@@ -3074,16 +2928,13 @@
             document.getElementById('loginBtn').addEventListener('click', goToApp);
             document.getElementById('loginBtnMobile').addEventListener('click', goToApp);
 
-            // ----- Back to site -----
             backToSiteBtn.addEventListener('click', showPublic);
             appAvatar.addEventListener('click', function() {
                 if (confirm('Log out of BeReady?')) showPublic();
             });
 
-            // ----- App sidebar toggle -----
             appHamburger.addEventListener('click', toggleAppSidebar);
 
-            // ----- App sidebar navigation -----
             const sidebarLinks = document.querySelectorAll('.app-sidebar nav a[data-panel]');
             const panels = {
                 dashboard: document.getElementById('panel-dashboard'),
@@ -3113,7 +2964,6 @@
                 });
             });
 
-            // ----- App logo -> dashboard -----
             document.getElementById('appLogo').addEventListener('click', function(e) {
                 e.preventDefault();
                 sidebarLinks.forEach(function(l) { l.classList.remove('active'); });
@@ -3125,7 +2975,6 @@
                 updateDashboardScore();
             });
 
-            // ----- Update greeting -----
             function updateGreeting() {
                 const hour = new Date().getHours();
                 let greet = 'Good morning';
@@ -3135,7 +2984,6 @@
                 if (el) el.textContent = '👋 ' + greet + ', John';
             }
 
-            // ----- Update dashboard score -----
             function updateDashboardScore() {
                 const score = getScore();
                 document.getElementById('dashBigScore').textContent = score;
@@ -3144,7 +2992,8 @@
                 const hasRecords = records.length >= 2;
                 const container = document.getElementById('nextStepsContainer');
                 if (container) {
-                    container.innerHTML = `
+                    container.innerHTML =
+                        `
                         <div class="app-step-item"><span class="check done">✓</span><span class="step-label">Complete business profile</span><span class="step-status done">Done</span></div>
                         <div class="app-step-item"><span class="check ${hasRecords ? 'done' : 'pending'}">${hasRecords ? '✓' : '!'}</span><span class="step-label">Add 3 months sales records</span><span class="step-status ${hasRecords ? 'done' : 'pending'}">${hasRecords ? 'Done' : 'Pending'}</span></div>
                         <div class="app-step-item"><span class="check pending">!</span><span class="step-label">Upload tax document</span><span class="step-status pending">Pending</span></div>
@@ -3152,13 +3001,13 @@
                 }
             }
 
-            // ----- Score logic -----
             function getScore() {
                 const records = getRecords();
                 const total = records.length;
                 let income = 0,
                     expense = 0;
-                records.forEach(r => { if (r.type === 'Income') income += r.amount; else expense += r.amount; });
+                records.forEach(r => { if (r.type === 'Income') income += r.amount;
+                    else expense += r.amount; });
                 let score = 50;
                 if (total > 0) score += Math.min(total * 2, 20);
                 if (income > 0 && expense > 0) score += 10;
@@ -3168,7 +3017,6 @@
                 return Math.min(Math.round(score), 100);
             }
 
-            // ----- RECORDS (localStorage) -----
             function getRecords() {
                 try { return JSON.parse(localStorage.getItem('beReadyRecords')) || []; } catch (e) { return []; }
             }
@@ -3196,11 +3044,11 @@
                     if (r.type === 'Income') totalInc += r.amount;
                     else totalExp += r.amount;
                     html += `<tr>
-                        <td>${escapeHtml(r.desc)}</td>
-                        <td>K${r.amount.toFixed(2)}</td>
-                        <td>${r.type}</td>
-                        <td><button class="delete-btn" data-idx="${idx}"><i class="fas fa-trash"></i></button></td>
-                    </tr>`;
+                            <td>${escapeHtml(r.desc)}</td>
+                            <td>K${r.amount.toFixed(2)}</td>
+                            <td>${r.type}</td>
+                            <td><button class="delete-btn" data-idx="${idx}"><i class="fas fa-trash"></i></button></td>
+                        </tr>`;
                 });
                 tbody.innerHTML = html;
                 updateTotals(records);
@@ -3217,7 +3065,8 @@
             function updateTotals(records) {
                 let inc = 0,
                     exp = 0;
-                records.forEach(r => { if (r.type === 'Income') inc += r.amount; else exp += r.amount; });
+                records.forEach(r => { if (r.type === 'Income') inc += r.amount;
+                    else exp += r.amount; });
                 const el = document.getElementById('recordTotal');
                 if (el) el.textContent =
                     `Total Income: K${inc.toFixed(2)} | Total Expenses: K${exp.toFixed(2)} | Net: K${(inc - exp).toFixed(2)}`;
@@ -3235,7 +3084,6 @@
                 return div.innerHTML;
             }
 
-            // Add record
             document.getElementById('addRecordBtn').addEventListener('click', function() {
                 const desc = document.getElementById('recordDesc').value.trim();
                 const amount = parseFloat(document.getElementById('recordAmount').value);
@@ -3251,7 +3099,6 @@
                 updateDashboardScore();
             });
 
-            // ----- COMPLIANCE (localStorage) -----
             function getCompliance() {
                 try {
                     const data = JSON.parse(localStorage.getItem('beReadyCompliance'));
@@ -3281,13 +3128,14 @@
                     const div = document.createElement('div');
                     div.className = 'compliance-item' + (item.done ? ' done' : '');
                     div.setAttribute('data-id', item.id);
-                    div.innerHTML = `
-                        <div class="comp-info"><h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.desc)}</p></div>
-                        <div style="display:flex;align-items:center;gap:8px;">
-                            <span class="comp-status">${item.done ? 'Done' : 'Pending'}</span>
-                            <button class="toggle-comp" data-id="${item.id}"><i class="fas ${item.done ? 'fa-undo' : 'fa-check-circle'}"></i></button>
-                        </div>
-                    `;
+                    div.innerHTML =
+                        `
+                            <div class="comp-info"><h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.desc)}</p></div>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <span class="comp-status">${item.done ? 'Done' : 'Pending'}</span>
+                                <button class="toggle-comp" data-id="${item.id}"><i class="fas ${item.done ? 'fa-undo' : 'fa-check-circle'}"></i></button>
+                            </div>
+                        `;
                     container.appendChild(div);
                 });
                 document.querySelectorAll('.toggle-comp').forEach(function(btn) {
@@ -3301,7 +3149,6 @@
                 });
             }
 
-            // ----- SAVE BUSINESS PROFILE -----
             function loadProfile() {
                 try {
                     const data = JSON.parse(localStorage.getItem('beReadyProfile'));
@@ -3318,12 +3165,13 @@
             function updateProfileDisplay(data) {
                 const d = document.getElementById('profileDisplay');
                 if (!d) return;
-                d.innerHTML = `
-                    <p><strong>Business:</strong> ${escapeHtml(data.name || 'ABC Enterprises')}</p>
-                    <p><strong>Industry:</strong> ${escapeHtml(data.industry || 'Retail')}</p>
-                    <p><strong>Location:</strong> ${escapeHtml(data.location || 'Lusaka, Zambia')}</p>
-                    <p><strong>Ownership:</strong> ${escapeHtml(data.ownership || 'Sole Proprietor')}</p>
-                `;
+                d.innerHTML =
+                    `
+                        <p><strong>Business:</strong> ${escapeHtml(data.name || 'ABC Enterprises')}</p>
+                        <p><strong>Industry:</strong> ${escapeHtml(data.industry || 'Retail')}</p>
+                        <p><strong>Location:</strong> ${escapeHtml(data.location || 'Lusaka, Zambia')}</p>
+                        <p><strong>Ownership:</strong> ${escapeHtml(data.ownership || 'Sole Proprietor')}</p>
+                    `;
             }
 
             document.getElementById('saveProfileBtn').addEventListener('click', function() {
@@ -3338,7 +3186,6 @@
                 alert('✅ Business profile saved!');
             });
 
-            // ----- DOCUMENT UPLOAD -----
             document.getElementById('docUploadBtn').addEventListener('click', function() {
                 const name = prompt('Enter document name (e.g. "Tax Clearance"):');
                 if (name) {
@@ -3346,47 +3193,47 @@
                     const div = document.createElement('div');
                     div.style.cssText =
                         'background:var(--bg);padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between;margin-bottom:6px;';
-                    div.innerHTML = `<span>📄 ${escapeHtml(name)}</span><span style="color:var(--green);font-size:0.8rem;">Uploaded</span>`;
+                    div.innerHTML =
+                        `<span>📄 ${escapeHtml(name)}</span><span style="color:var(--green);font-size:0.8rem;">Uploaded</span>`;
                     list.appendChild(div);
                 }
             });
 
-            // ----- RUN ASSESSMENT -----
             document.getElementById('runAssessmentBtn').addEventListener('click', function() {
                 const res = document.getElementById('assessmentResult');
                 if (res) {
                     res.style.display = 'block';
                     const score = getScore();
-                    res.innerHTML = `
-                        <p><strong>✅ Business Profile:</strong> 100%</p>
-                        <p><strong>📊 Financial Records:</strong> ${Math.min(score, 85)}%</p>
-                        <p><strong>✅ Compliance:</strong> ${Math.min(score + 5, 90)}%</p>
-                        <p><strong>💹 Finance Readiness:</strong> ${Math.min(score - 10, 70)}%</p>
-                        <p><strong>📦 Procurement Readiness:</strong> ${Math.min(score - 5, 75)}%</p>
-                        <p style="margin-top:8px;font-weight:700;color:var(--green);">Overall: ${score}% — Keep going!</p>
-                    `;
+                    res.innerHTML =
+                        `
+                            <p><strong>✅ Business Profile:</strong> 100%</p>
+                            <p><strong>📊 Financial Records:</strong> ${Math.min(score, 85)}%</p>
+                            <p><strong>✅ Compliance:</strong> ${Math.min(score + 5, 90)}%</p>
+                            <p><strong>💹 Finance Readiness:</strong> ${Math.min(score - 10, 70)}%</p>
+                            <p><strong>📦 Procurement Readiness:</strong> ${Math.min(score - 5, 75)}%</p>
+                            <p style="margin-top:8px;font-weight:700;color:var(--green);">Overall: ${score}% — Keep going!</p>
+                        `;
                 }
             });
 
-            // ----- GENERATE REPORT -----            document.getElementById('genReportBtn').addEventListener('click', function() {
+            document.getElementById('genReportBtn').addEventListener('click', function() {
                 const records = getRecords();
                 let inc = 0,
                     exp = 0;
-                records.forEach(r => { if (r.type === 'Income') inc += r.amount; else exp += r.amount; });
+                records.forEach(r => { if (r.type === 'Income') inc += r.amount;
+                    else exp += r.amount; });
                 document.getElementById('reportIncome').textContent = 'K' + inc.toFixed(2);
                 document.getElementById('reportExpense').textContent = 'K' + exp.toFixed(2);
                 document.getElementById('reportProfit').textContent = 'K' + (inc - exp).toFixed(2);
                 document.getElementById('reportOutput').style.display = 'block';
             });
 
-            // ----- INIT -----
             function init() {
                 loadProfile();
                 renderRecords();
                 renderCompliance();
                 updateGreeting();
 
-                // public score ring
                 const ring = document.getElementById('publicScoreRing');
                 if (ring) {
                     const score = getScore();
@@ -3419,9 +3266,7 @@
                     showPage('home');
                 });
 
-                // Set initial active state for footer
                 showPage('home');
-
                 console.log('🚀 BeReady fully functional. Formalise. Build. Grow.');
             }
 
@@ -3429,4 +3274,4 @@
         })();
     </script>
 </body>
-  </html>
+    </html>
